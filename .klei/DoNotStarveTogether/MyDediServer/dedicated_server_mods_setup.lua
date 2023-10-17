@@ -13,7 +13,7 @@
 
 
 -- Collection ID 可从 steam 饥荒社区创意工坊合集中 url 的 id=xxx... 得到。
-ServerModCollectionSetup("2203294008")   -- 虚荣
+ServerModCollectionSetup("2014099598")   -- 虚荣
 
 
 
