@@ -1,4 +1,7 @@
 return {
+  custom_settings_desc="",
+  custom_settings_id="CUSTOM_MY20231111",
+  custom_settings_name="my20231111",
   desc="永不结束的饥荒沙盒模式。\
 永远可以在绚丽之门复活。",
   hideminimap=false,
@@ -26,7 +29,7 @@ return {
     berrybush="default",
     birds="default",
     boons="default",
-    branching="never",
+    branching="default",
     brightmarecreatures="default",
     bunnymen_setting="default",
     butterfly="default",
@@ -55,7 +58,7 @@ return {
     flint="default",
     flowers="default",
     flowers_regrowth="default",
-    frograin="never",
+    frograin="default",
     frogs="default",
     fruitfly="default",
     ghostenabled="always",
@@ -63,7 +66,7 @@ return {
     gnarwail="default",
     goosemoose="default",
     grass="default",
-    grassgekkos="never",
+    grassgekkos="default",
     hallowed_nights="default",
     has_ocean=true,
     healthpenalty="always",
@@ -81,7 +84,7 @@ return {
     lightcrab_portalrate="default",
     lightning="default",
     lightninggoat="default",
-    loop="always",
+    loop="default",
     lureplants="default",
     malbatross="default",
     marshbush="default",
@@ -129,7 +132,7 @@ return {
     portal_spawnrate="default",
     portalresurection="always",
     powder_monkey_portalrate="default",
-    prefabswaps_start="classic",
+    prefabswaps_start="default",
     rabbits="default",
     rabbits_setting="default",
     reeds="default",
@@ -218,8 +221,7 @@ return {
   settings_name="无尽",
   substitutes={  },
   version=4,
-  worldgen_desc="永不结束的饥荒沙盒模式。\
-永远可以在绚丽之门复活。",
-  worldgen_id="ENDLESS",
-  worldgen_name="无尽" 
+  worldgen_desc="标准《饥荒》体验。",
+  worldgen_id="SURVIVAL_TOGETHER",
+  worldgen_name="生存" 
 }
