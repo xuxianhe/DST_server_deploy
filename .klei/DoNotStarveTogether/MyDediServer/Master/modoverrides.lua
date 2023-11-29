@@ -1,13 +1,17 @@
 return {
   ["workshop-1185229307"]={
     configuration_options={
-      [""]="",
+      CAMERA=true,
       DAMAGE_NUMBERS=true,
       DAMAGE_RESISTANCE=true,
       FRAME_PHASES=true,
+      GLOBAL=false,
+      GLOBAL_NUMBERS=false,
+      HEADER_CLIENT=false,
+      HEADER_SERVER=false,
       HORIZONTAL_OFFSET=0,
-      NOEPIC=false,
-      NONOEPIC=false,
+      TAG="EPIC",
+      TRANSLATOR=false,
       WETNESS_METER=true 
     },
     enabled=true 
@@ -19,14 +23,36 @@ return {
   },
   ["workshop-1686705509"]={ configuration_options={  }, enabled=true },
   ["workshop-1818688368"]={ configuration_options={  }, enabled=true },
-  ["workshop-1894295075"]={ configuration_options={  }, enabled=true },
+  ["workshop-1852257480"]={
+    configuration_options={ horizontal=0, info=false, position="bottom", vertical="auto" },
+    enabled=true 
+  },
+  ["workshop-1898292532"]={
+    configuration_options={
+      antlion=true,
+      atrium_gate=true,
+      bearger=true,
+      beequeenhive=true,
+      crabking=true,
+      deerclops=true,
+      dragonfly=true,
+      hound=true,
+      klaus_sack=true,
+      lunarrift_portal=true,
+      malbatross=true,
+      prime_mate=true,
+      tips_method=1,
+      toadstool=true 
+    },
+    enabled=true 
+  },
   ["workshop-1931546689"]={
     configuration_options={ icon=0, ison=0, radius=5, recipe=0, skin=1 },
     enabled=true 
   },
   ["workshop-1998081438"]={ configuration_options={ StackMode=true, StackRadius=10 }, enabled=true },
   ["workshop-2323630362"]={
-    configuration_options={ no_rotten=true, quick_plant=true, to_auto_aligning=true, to_oversize=true },
+    configuration_options={ no_rotten=false, quick_plant=true, to_auto_aligning=true, to_oversize=true },
     enabled=true 
   },
   ["workshop-2494857748"]={
@@ -43,7 +69,7 @@ return {
       poop=true,
       rottenegg=false,
       silk=false,
-      sketch=false,
+      sketch=true,
       spidergland=true,
       spoiled_food=true,
       stinger=true,
@@ -74,7 +100,7 @@ return {
   ["workshop-2784048339"]={
     configuration_options={
       Craft="Easy",
-      Destroyable="DestroyByPlayer",
+      Destroyable="DestroyByAll",
       Language="Ch",
       Slots=80,
       srfresh=0,
@@ -83,7 +109,28 @@ return {
     enabled=true 
   },
   ["workshop-2902364746"]={ configuration_options={ mode="Share" }, enabled=true },
-  ["workshop-362175979"]={ configuration_options={ ["Draw over FoW"]="enabled" }, enabled=true },
+  ["workshop-2995319954"]={
+    configuration_options={
+      FLIPMOON=false,
+      HIDECAVECLOCK=false,
+      HUDSCALEFACTOR=100,
+      SEASONOPTIONS="Clock",
+      SHOWBEAVERNESS=true,
+      SHOWCLOCKTEXT=true,
+      SHOWMAXONNUMBERS=true,
+      SHOWMOON=1,
+      SHOWNAUGHTINESS=true,
+      SHOWNEXTFULLMOON=true,
+      SHOWSTATNUMBERS=true,
+      SHOWTEMPBADGES=true,
+      SHOWTEMPERATURE=true,
+      SHOWWANINGMOON=true,
+      SHOWWORLDTEMP=false,
+      UNIT="T" 
+    },
+    enabled=true 
+  },
+  ["workshop-362175979"]={ configuration_options={ ["Draw over FoW"]="disabled" }, enabled=true },
   ["workshop-374550642"]={ configuration_options={ MAXSTACKSIZE=250 }, enabled=true },
   ["workshop-375859599"]={
     configuration_options={
