@@ -94,7 +94,7 @@ EOF
 function progress_bar()
 {
     local progress_bar_i=0
-    local progress_bar_index_color=4 # 0(黑), 1(红), 2(绿), 3(黄), 4(蓝), 5(洋红), 6(青), 7(白)
+    local progress_bar_index_color=2 # 0(黑), 1(红), 2(绿), 3(黄), 4(蓝), 5(洋红), 6(青), 7(白)
     local progress_bar_color=$((30+progress_bar_index_color))
     local progress_bar_window_width=$(stty size|awk '{print $2}')
     ((progress_bar_window_width=progress_bar_window_width-13))
