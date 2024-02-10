@@ -30,29 +30,29 @@ return {
   ["workshop-1898292532"]={
     configuration_options={
       antlion=true,
-      atrium_gate=true,
+      atrium_gate=false,
       bearger=true,
-      beequeenhive=true,
-      crabking=true,
+      beequeenhive=false,
+      crabking=false,
       deerclops=true,
-      dragonfly=true,
+      dragonfly=false,
       hound=true,
-      klaus_sack=true,
+      klaus_sack=false,
       lunarrift_portal=true,
-      malbatross=true,
+      malbatross=false,
       prime_mate=true,
       tips_method=1,
-      toadstool=true 
+      toadstool=false 
     },
     enabled=true 
   },
   ["workshop-1931546689"]={
-    configuration_options={ icon=0, ison=0, radius=5, recipe=0, skin=1 },
+    configuration_options={ icon=0, ison=0, radius=5, recipe=1, skin=1 },
     enabled=true 
   },
   ["workshop-1998081438"]={ configuration_options={ StackMode=true, StackRadius=10 }, enabled=true },
   ["workshop-2323630362"]={
-    configuration_options={ no_rotten=false, quick_plant=true, to_auto_aligning=true, to_oversize=true },
+    configuration_options={ no_rotten=true, quick_plant=true, to_auto_aligning=true, to_oversize=true },
     enabled=true 
   },
   ["workshop-2494857748"]={
@@ -73,7 +73,7 @@ return {
       spidergland=true,
       spoiled_food=true,
       stinger=true,
-      twigs=false,
+      twigs=true,
       winter_food=true,
       winter_ornament=true,
       winter_ornament_boss=true,
@@ -83,24 +83,24 @@ return {
   },
   ["workshop-2527328931"]={
     configuration_options={
-      Animal=false,
-      BuildRepair=false,
+      Animal=true,
+      BuildRepair=true,
       ChopTime=0.01,
       CookTime=998,
       DryTime=999,
       FishTime=999,
-      HSHU=false,
+      HSHU=true,
       MineTime=0.01,
       Others=true,
       Pick=true,
-      Plant=false 
+      Plant=true 
     },
     enabled=true 
   },
   ["workshop-2784048339"]={
     configuration_options={
       Craft="Easy",
-      Destroyable="DestroyByAll",
+      Destroyable="DestroyByPlayer",
       Language="Ch",
       Slots=80,
       srfresh=0,
@@ -108,28 +108,7 @@ return {
     },
     enabled=true 
   },
-  ["workshop-2902364746"]={ configuration_options={ mode="Share" }, enabled=true },
-  ["workshop-2995319954"]={
-    configuration_options={
-      FLIPMOON=false,
-      HIDECAVECLOCK=false,
-      HUDSCALEFACTOR=100,
-      SEASONOPTIONS="Clock",
-      SHOWBEAVERNESS=true,
-      SHOWCLOCKTEXT=true,
-      SHOWMAXONNUMBERS=true,
-      SHOWMOON=1,
-      SHOWNAUGHTINESS=true,
-      SHOWNEXTFULLMOON=true,
-      SHOWSTATNUMBERS=true,
-      SHOWTEMPBADGES=true,
-      SHOWTEMPERATURE=true,
-      SHOWWANINGMOON=true,
-      SHOWWORLDTEMP=false,
-      UNIT="T" 
-    },
-    enabled=true 
-  },
+  ["workshop-2902364746"]={ configuration_options={ mode="Both" }, enabled=true },
   ["workshop-362175979"]={ configuration_options={ ["Draw over FoW"]="disabled" }, enabled=true },
   ["workshop-374550642"]={ configuration_options={ MAXSTACKSIZE=250 }, enabled=true },
   ["workshop-375859599"]={
@@ -154,7 +133,7 @@ return {
       food_estimation=-1,
       food_order=0,
       food_style=0,
-      lang="chs",
+      lang="auto",
       show_food_units=-1,
       show_uses=-1 
     },
