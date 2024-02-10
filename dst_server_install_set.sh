@@ -219,7 +219,7 @@ function install_rely()
                     exit 1
                 fi
             fi
-            cp /usr/lib/libcurl.so.4 $dst_dir/bin/lib32/libcurl-gnutls.so.4 # 解决方案（启动报错：找不到 libcurl-gnutls.so.4）
+            cp /usr/lib/libcurl.so.4 $dst_dir/bin64/lib64/libcurl-gnutls.so.4 # 解决方案（启动报错：找不到 libcurl-gnutls.so.4）
         else
             if ! sudo yum install -y glibc libstdc++ libcurl screen vim expect
             then
@@ -231,7 +231,7 @@ function install_rely()
                     exit 1
                 fi
             fi
-            cp /usr/lib/libcurl.so.4 $dst_dir/bin/lib32/libcurl-gnutls.so.4 # 解决方案（启动报错：找不到 libcurl-gnutls.so.4）
+            cp /usr/lib/libcurl.so.4 $dst_dir/bin64/lib64/libcurl-gnutls.so.4 # 解决方案（启动报错：找不到 libcurl-gnutls.so.4）
         fi
 
     fi
@@ -344,7 +344,7 @@ function get_master_and_caves_status()
 
 function dst_master_start()
 {
-    cd $dst_dir/bin/
+    cd $dst_dir/bin64/
     if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
     then
         whiptail --title "message" --yesno "开启世界需要时间（大概：2 min），请内心等待。\n\n查看会话序号：screen -ls\n\n查看启动日志：screen -r session_id/session_name" 12 60
@@ -356,7 +356,7 @@ function dst_master_start()
 
 function dst_caves_start()
 {
-    cd $dst_dir/bin/
+    cd $dst_dir/bin64/
     if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
     then
         whiptail --title "message" --yesno "开启世界需要时间（大概：2 min），请内心等待。\n\n查看会话序号：screen -ls\n\n查看启动日志：screen -r session_id/session_name" 12 60
@@ -801,7 +801,7 @@ function loop()
 
             if [[ "$tmp_master" == "start" ]]
             then
-                cd $dst_dir/bin/
+                cd $dst_dir/bin64/
                 screen -dmS ${cluster_name}_dst_master ./dontstarve_dedicated_server_nullrenderer_x64 -console -cluster "$cluster_name" -shard Master &
                 # dst_master_start
                 progress_bar
@@ -809,7 +809,7 @@ function loop()
             fi
             if [[ "$tmp_caves" == "start" ]]
             then
-                cd $dst_dir/bin/
+                cd $dst_dir/bin64/
                 screen -dmS ${cluster_name}_dst_caves ./dontstarve_dedicated_server_nullrenderer_x64 -console -cluster "$cluster_name" -shard Caves &
                 # dst_caves_start
                 echo -e "\033[31m已开启当前存档指向的地下世界！\033[0m"
