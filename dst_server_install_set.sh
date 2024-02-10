@@ -313,7 +313,7 @@ function install_dst()
 
 function get_master_and_caves_status()
 {
-    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
+    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
     then
         master_status_wait=""
         master_status="stop"
@@ -326,7 +326,7 @@ function get_master_and_caves_status()
         fi
     fi
 
-    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
+    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
     then
         caves_status_wait=""
         caves_status="stop"
@@ -345,10 +345,10 @@ function get_master_and_caves_status()
 function dst_master_start()
 {
     cd $dst_dir/bin/
-    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
+    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
     then
         whiptail --title "message" --yesno "开启世界需要时间（大概：2 min），请内心等待。\n\n查看会话序号：screen -ls\n\n查看启动日志：screen -r session_id/session_name" 12 60
-        screen -dmS ${cluster_name}_dst_master ./dontstarve_dedicated_server_nullrenderer_x64 -console -cluster "$cluster_name" -shard Master &
+        screen -dmS ${cluster_name}_dst_master ./dontstarve_dedicated_server_nullrenderer -console -cluster "$cluster_name" -shard Master &
     else
         whiptail --title "message" --msgbox "存档指向的地上世界已经开启或正在关闭，请勿重复开启或等待开启！" 10 60
     fi
@@ -357,10 +357,10 @@ function dst_master_start()
 function dst_caves_start()
 {
     cd $dst_dir/bin/
-    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
+    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" == "" ]]
     then
         whiptail --title "message" --yesno "开启世界需要时间（大概：2 min），请内心等待。\n\n查看会话序号：screen -ls\n\n查看启动日志：screen -r session_id/session_name" 12 60
-        screen -dmS ${cluster_name}_dst_caves ./dontstarve_dedicated_server_nullrenderer_x64 -console -cluster "$cluster_name" -shard Caves &
+        screen -dmS ${cluster_name}_dst_caves ./dontstarve_dedicated_server_nullrenderer -console -cluster "$cluster_name" -shard Caves &
     else
         whiptail --title "message" --msgbox "存档指向的地下世界已经开启或正在关闭，请勿重复开启或等待开启！" 10 60
     fi
@@ -370,9 +370,9 @@ function dst_caves_start()
 
 function dst_master_stop()
 {
-    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}')" != "" ]]
+    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}')" != "" ]]
     then
-        sudo kill -2 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}') && sleep 15 && [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Master | grep -v dmS | grep $cluster_name  | awk '{print $2}')" != "" ]] && sudo kill -9 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}') &
+        sudo kill -2 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}') && sleep 15 && [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Master | grep -v dmS | grep $cluster_name  | awk '{print $2}')" != "" ]] && sudo kill -9 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Master | grep -v dmS | grep $cluster_name | awk '{print $2}') &
         master_status_wait="wait"
     # else
         # whiptail --title "message" --msgbox "待结束地上世界进程不存在！" 10 60
@@ -381,9 +381,9 @@ function dst_master_stop()
 
 function dst_caves_stop()
 {
-    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" != "" ]]
+    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" != "" ]]
     then
-        sudo kill -2 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}') && sleep 15 && [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" != "" ]] && sudo kill -9 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}') &
+        sudo kill -2 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}') && sleep 15 && [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}')" != "" ]] && sudo kill -9 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep Caves | grep -v dmS | grep $cluster_name | awk '{print $2}') &
         caves_status_wait="wait"
     # else
         # whiptail --title "message" --msgbox "待结束地下世界进程不存在！" 10 60
@@ -392,9 +392,9 @@ function dst_caves_stop()
 
 function dst_stop_all()
 {
-    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep -v dmS | grep -v grep | awk '{print $2}')" != "" ]]
+    if [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep -v dmS | grep -v grep | awk '{print $2}')" != "" ]]
     then
-        sudo kill -2 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep -v dmS | grep -v grep | awk '{print $2}') && sleep 15 && [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep -v dmS | grep -v grep | awk '{print$2}')" != "" ]] && sudo kill -9 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer_x64 | grep -v dmS | grep -v grep | awk '{print $2}') &
+        sudo kill -2 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep -v dmS | grep -v grep | awk '{print $2}') && sleep 15 && [[ "$(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep -v dmS | grep -v grep | awk '{print$2}')" != "" ]] && sudo kill -9 $(ps -ef | grep ./dontstarve_dedicated_server_nullrenderer | grep -v dmS | grep -v grep | awk '{print $2}') &
         master_status_wait="wait"
         caves_status_wait="wait"
     # else
@@ -802,7 +802,7 @@ function loop()
             if [[ "$tmp_master" == "start" ]]
             then
                 cd $dst_dir/bin/
-                screen -dmS ${cluster_name}_dst_master ./dontstarve_dedicated_server_nullrenderer_x64 -console -cluster "$cluster_name" -shard Master &
+                screen -dmS ${cluster_name}_dst_master ./dontstarve_dedicated_server_nullrenderer -console -cluster "$cluster_name" -shard Master &
                 # dst_master_start
                 progress_bar
                 echo -e "\033[31m已开启当前存档指向的地上世界！\033[0m"
@@ -810,7 +810,7 @@ function loop()
             if [[ "$tmp_caves" == "start" ]]
             then
                 cd $dst_dir/bin/
-                screen -dmS ${cluster_name}_dst_caves ./dontstarve_dedicated_server_nullrenderer_x64 -console -cluster "$cluster_name" -shard Caves &
+                screen -dmS ${cluster_name}_dst_caves ./dontstarve_dedicated_server_nullrenderer -console -cluster "$cluster_name" -shard Caves &
                 # dst_caves_start
                 echo -e "\033[31m已开启当前存档指向的地下世界！\033[0m"
             fi
