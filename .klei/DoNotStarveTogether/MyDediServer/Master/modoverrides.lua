@@ -24,8 +24,8 @@ return {
   ["workshop-1686705509"]={ configuration_options={  }, enabled=true },
   ["workshop-1818688368"]={ configuration_options={  }, enabled=true },
   ["workshop-1852257480"]={
-    configuration_options={ horizontal=0, info=false, position="bottom", vertical="auto" },
-    enabled=true 
+    configuration_options={ horizontal=0, info=true, position="bottom", vertical="auto" },
+    enabled=true
   },
   ["workshop-1898292532"]={
     configuration_options={
@@ -110,7 +110,15 @@ return {
   },
   ["workshop-2902364746"]={ configuration_options={ mode="Both" }, enabled=true },
   ["workshop-362175979"]={ configuration_options={ ["Draw over FoW"]="disabled" }, enabled=true },
-  ["workshop-374550642"]={ configuration_options={ MAXSTACKSIZE=250 }, enabled=true },
+  ["workshop-374550642"]={
+    configuration_options={
+      STACK_SIZE_LARGEITEM=999,
+      STACK_SIZE_MEDITEM=999,
+      STACK_SIZE_SMALLITEM=999,
+      STACK_SIZE_TINYITEM=999 
+    },
+    enabled=true 
+  },
   ["workshop-375859599"]={
     configuration_options={
       divider=5,
